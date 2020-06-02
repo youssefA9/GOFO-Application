@@ -66,8 +66,8 @@ public class playground_owner extends User {
     /**
      * Add the new playground to the Owner's playgrounds and waiting for the admin to approve it
      *
-     * @param admin
-     * @param p
+     * @param admin The Administrator
+     * @param p     The playground
      */
     public void add_playground(Administrator admin, Playground p) {
         admin.grounds.add(p);

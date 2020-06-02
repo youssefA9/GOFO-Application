@@ -17,8 +17,8 @@ public class Administrator {
     /**
      * Constructor used to initialize the admin obj by ID and Password
      *
-     * @param ID
-     * @param Password
+     * @param ID       Admin's ID
+     * @param Password Admin's Pssword
      */
     public Administrator(int ID, String Password) {
         this.ID = ID;
@@ -41,7 +41,7 @@ public class Administrator {
         this.ID = ID;
     }
 
-   
+
     public String getPassword() {
         return Password;
     }
@@ -65,8 +65,8 @@ public class Administrator {
      * This method is used to accept playground from the not yet approved playgrounds
      * and update the booking system with it
      *
-     * @param sys
-     * @param p
+     * @param sys Object from the booking System
+     * @param p   The Desired playground
      */
     public void Approve_Playground(Booking_System sys, Playground p) {
         sys.playgrounds.add(p);
@@ -77,8 +77,8 @@ public class Administrator {
      * This method is used to activate the suspended playground
      * and sync that change with the booking system to make it available to the players
      *
-     * @param sys
-     * @param index
+     * @param sys   Object from the booking System
+     * @param index The Number of the Desired playground
      */
     public void Activate_Playground(Booking_System sys, int index) {
         sys.playgrounds.get(index).Active = true;
@@ -98,8 +98,8 @@ public class Administrator {
     /**
      * This method is used to delete the playground entirely from the system
      *
-     * @param sys
-     * @param index
+     * @param sys   Object from the booking System
+     * @param index The number of the Desired Playground
      */
     public void Delete_Playground(Booking_System sys, int index) {
         sys.playgrounds.remove(index);

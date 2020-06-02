@@ -56,8 +56,8 @@ public class Player extends User {
      * This method is used to Show the player all the available playgrounds
      * and let him make operations on them to choose which one he wanted to book
      *
-     * @param sys
-     * @param m
+     * @param sys Object from the booking System
+     * @param m   The player who wants to book a playground
      */
     public void book(Booking_System sys, User m) {
         System.out.println("Select one of the options below : ");
@@ -159,7 +159,7 @@ public class Player extends User {
     /**
      * This method is used to make operation on the favourite team from adding to removing players
      *
-     * @param player_list
+     * @param player_list List of the players registered in the System
      */
     public void edit_favTeam(ArrayList<Player> player_list) {
         Scanner input = new Scanner(System.in);
@@ -295,7 +295,7 @@ public class Player extends User {
      * This method is used to create new team and put a name to it
      * as while as the players
      *
-     * @param player_list
+     * @param player_list List of the players registered in the System
      */
     public void create_team(ArrayList<Player> player_list) {
         if (Fav_Team.getSize() == 0) {

@@ -88,8 +88,8 @@ public class User {
     /**
      * This method is used to determine the player from the playground owner or if not existed
      *
-     * @param userName
-     * @param password
+     * @param userName The user username of the user who wants to login
+     * @param password The user password of the user who wants to login
      * @return a number used to determine if the user is Player or Playground Owner or not existed
      */
     public int login(String userName, String password) {
@@ -113,7 +113,7 @@ public class User {
     /**
      * This method is used to check if the username is available
      *
-     * @param userName
+     * @param userName The user username of the user who wants to login
      * @return a number to determine if the username existed or not
      */
     public int check_username(String userName) {

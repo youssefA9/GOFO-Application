@@ -24,8 +24,8 @@ public class Booking_System {
     /**
      * This method is used to Calculate the Total price in which the players chose to book
      *
-     * @param time
-     * @param m
+     * @param time The time desired to be booked
+     * @param m    The desired playground
      * @return
      */
     public double Cal_TotalPrice(int time, Playground m) {
@@ -37,8 +37,8 @@ public class Booking_System {
     /**
      * This method is used to communicate with the eWallet to let the player to pay for his booked hours
      *
-     * @param price
-     * @param m
+     * @param price The price of the booked time
+     * @param m     The player who wanted to book that time
      */
     public void pay(double price, User m) {
         if (m.eWallet < price) {
@@ -72,7 +72,7 @@ public class Booking_System {
     /**
      * This method is used to view the available hours that the desired playground has
      *
-     * @param m
+     * @param m The playground which the player wants to view it's available hours
      */
     public void View_Hours(Playground m) {
         for (int i = 0; i < m.getAvailable_Hours(); i++) {
@@ -87,8 +87,8 @@ public class Booking_System {
      * This method is used to filter the playgrounds by one slot
      * if the playgrounds are available in that time
      *
-     * @param slot
-     * @return
+     * @param slot The time which the player wants to filter the playgrounds according to
+     * @return a number to indicate if their is available playground with that time
      */
     public int Filter_Hours(String slot) {
         int s = 20;
