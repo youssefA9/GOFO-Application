@@ -2,6 +2,9 @@ package APP;
 
 import java.util.ArrayList;
 
+/**
+ * This Class describes the User and it's information and Functionality
+ */
 public class User {
     protected String name;
     protected String password;
@@ -82,9 +85,13 @@ public class User {
         this.location = location;
     }
 
-    /*
-    public  void Edit_info(){}
-      public  void Sign_up(){}*/
+    /**
+     * This method is used to determine the player from the playground owner or if not existed
+     *
+     * @param userName
+     * @param password
+     * @return a number used to determine if the user is Player or Playground Owner or not existed
+     */
     public int login(String userName, String password) {
         for (int i = 0; i < player.size(); i++) {
             if (userName.equals(player.get(i).getUsername()) && password.equals(player.get(i).getPassword())) {
@@ -103,6 +110,12 @@ public class User {
         return 0;
     }
 
+    /**
+     * This method is used to check if the username is available
+     *
+     * @param userName
+     * @return a number to determine if the username existed or not
+     */
     public int check_username(String userName) {
         for (int i = 0; i < player.size(); i++) {
             if (userName.equals(player.get(i).getUsername())) {
@@ -125,6 +138,4 @@ public class User {
     public void setOwner(playground_owner owner1) {
         owner.add(owner1);
     }
-
-
 }

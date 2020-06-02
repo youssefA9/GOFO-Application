@@ -3,22 +3,43 @@ package APP;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * Represents the system which communicates with the player and the admin
+ */
 public class Booking_System {
     public ArrayList<Playground> playgrounds = new ArrayList<Playground>();
+
+    /**
+     * This method used to display all the available playground
+     */
     public void Display_Playgrounds() {
         System.out.println("Number of Playgrounds : " + (playgrounds.size()));
         for (int i = 0; i < playgrounds.size(); i++) {
-            if(playgrounds.get(i).Active==true){
-            System.out.println((i + 1) + "- " + playgrounds.get(i) + "\n");
-        }}
+            if (playgrounds.get(i).Active == true) {
+                System.out.println((i + 1) + "- " + playgrounds.get(i) + "\n");
+            }
+        }
     }
 
+    /**
+     * This method is used to Calculate the Total price in which the players chose to book
+     *
+     * @param time
+     * @param m
+     * @return
+     */
     public double Cal_TotalPrice(int time, Playground m) {
         double total;
         total = m.getPrice_perHour() * time;
         return total;
     }
 
+    /**
+     * This method is used to communicate with the eWallet to let the player to pay for his booked hours
+     *
+     * @param price
+     * @param m
+     */
     public void pay(double price, User m) {
         if (m.eWallet < price) {
             System.out.println("Payment failed!");
@@ -28,6 +49,9 @@ public class Booking_System {
         }
     }
 
+    /**
+     * This method is used to filer the playgrounds by it's location
+     */
     public void Filter_Playgrounds() {
         String filt;
         Scanner m = new Scanner(System.in);
@@ -35,42 +59,55 @@ public class Booking_System {
         filt = m.nextLine();
         int count = 1;
         for (int i = 0; i < playgrounds.size(); i++) {
-            if (filt.equals(playgrounds.get(i).Location)&&playgrounds.get(i).Active==true){
+            if (filt.equals(playgrounds.get(i).Location) && playgrounds.get(i).Active == true) {
                 System.out.println((count) + "- " + playgrounds.get(i).toString() + "\n");
-                count++;}
+                count++;
+            }
         }
         if (count == 1) {
             System.out.print("There are no playgrounds in this area!");
         }
     }
 
+    /**
+     * This method is used to view the available hours that the desired playground has
+     *
+     * @param m
+     */
     public void View_Hours(Playground m) {
-        for (int i = 0; i <m.getAvailable_Hours() ; i++) {
-            if(m.Booked[i]==false){
-                System.out.println((i+1) + "- " + m.Hours[i] + "\n");
+        for (int i = 0; i < m.getAvailable_Hours(); i++) {
+            if (m.Booked[i] == false) {
+                System.out.println((i + 1) + "- " + m.Hours[i] + "\n");
             }
         }
 
     }
-    public int Filter_Hours(String slot){
-        int s=20;
-        int count=1;
 
-        for(int i=0;i<15;i++){
-            if(playgrounds.get(0).Hours[i].equals(slot)){
-                s=i;
+    /**
+     * This method is used to filter the playgrounds by one slot
+     * if the playgrounds are available in that time
+     *
+     * @param slot
+     * @return
+     */
+    public int Filter_Hours(String slot) {
+        int s = 20;
+        int count = 1;
+
+        for (int i = 0; i < 15; i++) {
+            if (playgrounds.get(0).Hours[i].equals(slot)) {
+                s = i;
             }
         }
-        if(s!=20) {
+        if (s != 20) {
             for (int i = 0; i < playgrounds.size(); i++) {
-                if (playgrounds.get(i).Booked[s] == false&&playgrounds.get(i).Active==true) {
+                if (playgrounds.get(i).Booked[s] == false && playgrounds.get(i).Active == true) {
                     System.out.println((count) + "- " + playgrounds.get(i).toString() + "\n");
                     count++;
                 }
             }
             return s;
-        }
-        else{
+        } else {
             System.out.println("No available Playgrounds available in this slot");
             return 0;
         }

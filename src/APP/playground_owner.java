@@ -3,16 +3,38 @@ package APP;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * Describes the playground owner as while as his functionality
+ */
 public class playground_owner extends User {
+    /**
+     * Empty Constructor
+     */
     public playground_owner() {
     }
 
+    /**
+     * Constructor used to assign the information of the Owner
+     *
+     * @param name
+     * @param Username
+     * @param password
+     * @param Email
+     * @param phone
+     * @param location
+     * @param eWallet
+     */
     public playground_owner(String name, String Username, String password, String Email, int phone, String location, double eWallet) {
         super(name, Username, password, Email, phone, location, eWallet);
     }
 
     public ArrayList<Playground> ownPlay = new ArrayList<Playground>();
 
+    /**
+     * This method is used to make a new playground with it's information
+     *
+     * @return The registered playground
+     */
     public Playground register_Playground() {
         Playground p = new Playground();
         Scanner k = new Scanner(System.in);
@@ -41,6 +63,12 @@ public class playground_owner extends User {
         return p;
     }
 
+    /**
+     * Add the new playground to the Owner's playgrounds and waiting for the admin to approve it
+     *
+     * @param admin
+     * @param p
+     */
     public void add_playground(Administrator admin, Playground p) {
         admin.grounds.add(p);
         ownPlay.add(p);

@@ -4,7 +4,9 @@ package APP;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-
+/**
+ * It's just the interface to communicate with the user
+ */
 public class Main {
     private static Player Player;
     private static playground_owner playground_owner;
@@ -28,7 +30,6 @@ public class Main {
         int option;
         int playerOption;
         int choice = 0;
-
 
 
         Administrator admin = new Administrator();
@@ -208,7 +209,7 @@ public class Main {
                             }
                         } else if (playerOption == 5) {
                             players.get(x).check_messages();
-                        } else if (playerOption !=6) {
+                        } else if (playerOption != 6) {
                             System.out.println("Invalid input");
                         }
                     } while (playerOption != 6);

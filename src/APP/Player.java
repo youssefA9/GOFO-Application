@@ -5,16 +5,32 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Vector;
 
+/**
+ * Desicribes the player  with his functionality
+ */
 public class Player extends User {
     private ArrayList<String> Booked_playground = new ArrayList<String>();
     private ArrayList<Float> Booked_Times = new ArrayList<Float>();
     protected Team Fav_Team = new Team();
     protected Vector<String> messages = new Vector<String>();
 
+    /**
+     * Empty constructor
+     */
     public Player() {
     }
 
-
+    /**
+     * This constructor is used to set the information of the player
+     *
+     * @param name
+     * @param Username
+     * @param password
+     * @param Email
+     * @param phone
+     * @param location
+     * @param eWallet
+     */
     public Player(String name, String Username, String password, String Email, int phone, String location, double eWallet) {
         super(name, Username, password, Email, phone, location, eWallet);
     }
@@ -22,6 +38,7 @@ public class Player extends User {
     public ArrayList<String> getBooked_playground() {
         return Booked_playground;
     }
+
 
     public void setBooked_playground(ArrayList<String> Booked_playground) {
         this.Booked_playground = Booked_playground;
@@ -35,6 +52,13 @@ public class Player extends User {
         this.Booked_Times = Booked_Times;
     }
 
+    /**
+     * This method is used to Show the player all the available playgrounds
+     * and let him make operations on them to choose which one he wanted to book
+     *
+     * @param sys
+     * @param m
+     */
     public void book(Booking_System sys, User m) {
         System.out.println("Select one of the options below : ");
         System.out.println("1- Show all Playgrounds ");
@@ -109,6 +133,9 @@ public class Player extends User {
         }
     }
 
+    /**
+     * This method is used to send invitation notification to all the player in the favourite team
+     */
     public void send_inv() {
         for (int i = 0; i < Fav_Team.Players.size(); i++) {
             System.out.println("Invitation was sent to " + Fav_Team.Players.get(i).Username);
@@ -116,6 +143,9 @@ public class Player extends User {
         }
     }
 
+    /**
+     * This method is used to check if there any received messages or invitations from other players
+     */
     public void check_messages() {
         if (messages.size() == 0) {
             System.out.println("No Messages was received");
@@ -126,6 +156,11 @@ public class Player extends User {
         System.out.println("\n");
     }
 
+    /**
+     * This method is used to make operation on the favourite team from adding to removing players
+     *
+     * @param player_list
+     */
     public void edit_favTeam(ArrayList<Player> player_list) {
         Scanner input = new Scanner(System.in);
         int option = 0;
@@ -256,6 +291,12 @@ public class Player extends User {
         }
     }
 
+    /**
+     * This method is used to create new team and put a name to it
+     * as while as the players
+     *
+     * @param player_list
+     */
     public void create_team(ArrayList<Player> player_list) {
         if (Fav_Team.getSize() == 0) {
             Scanner input = new Scanner(System.in);
