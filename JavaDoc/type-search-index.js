@@ -1,0 +1,1 @@
+typeSearchIndex = [{"p":"APP","l":"Administrator"},{"l":"All Classes","url":"allclasses-index.html"},{"p":"APP","l":"Booking_System"},{"p":"APP","l":"Main"},{"p":"APP","l":"Player"},{"p":"APP","l":"Playground"},{"p":"APP","l":"playground_owner"},{"p":"APP","l":"Team"},{"p":"APP","l":"User"}]
