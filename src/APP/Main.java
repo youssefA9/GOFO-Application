@@ -30,8 +30,7 @@ public class Main {
         int choice = 0;
 
 
-        //owner.add(new playground_owner("khaled", "kh", "22", "22", 22222, "ss", 500));
-        // players.add(new Player("khaled", "mm", "22", "22", 22222, "ss", 500));
+
         Administrator admin = new Administrator();
         Booking_System sys = new Booking_System();
 
