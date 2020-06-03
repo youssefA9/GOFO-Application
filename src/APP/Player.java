@@ -112,7 +112,6 @@ public class Player extends User {
                 } else if (ans2 == 2) {
                     x = 2;
                 }
-
             }
             System.out.println("Total Price : " + sys.Cal_TotalPrice(counter, sys.playgrounds.get(PgIndex - 1)) + '\n');
             sys.pay(sys.Cal_TotalPrice(counter, sys.playgrounds.get(PgIndex - 1)), m);
