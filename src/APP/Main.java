@@ -213,6 +213,7 @@ public class Main {
                             System.out.println("Invalid input");
                         }
                     } while (playerOption != 6);
+
                 }
                 if (user.login(userName, password) == 2) {
                     System.out.println("Welcome Back Playground Owner..");
